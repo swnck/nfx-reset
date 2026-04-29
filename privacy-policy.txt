@@ -1,0 +1,1 @@
+NFX Reset does not collect, store, or transmit any personal user data. All operations are performed locally on the user's device. We do not use cookies for tracking and do not communicate with any external servers.
