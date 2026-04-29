@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "NFX Reset",
+  "version": "1.0.0",
+  "description": "Take back control of your Netflix experience: Reset autoplay and \"Next Episode\" progress with a single click.",
+  "permissions": [
+    "cookies"
+  ],
+  "host_permissions": [
+    "https://www.netflix.com/*",
+    "https://web.prod.cloud.netflix.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.netflix.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "128": "icons/icon128.png"
+  }
+}
