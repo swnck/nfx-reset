@@ -23,7 +23,7 @@ jobs:
         run: zip -r release.zip . -x "*.git*" ".github*" "README.md"
 
       - name: Upload & Publish to Chrome Web Store
-        uses: mobilefirstllc/chrome-webstore-upload@v2
+        uses: mobilefirstllc/cws-publish@latest
         with:
           file-name: 'release.zip'
           extension-id: ${{ secrets.EXTENSION_ID }}
