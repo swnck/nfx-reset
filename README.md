@@ -1,5 +1,6 @@
 ![Chrome Web Store Size](https://img.shields.io/chrome-web-store/size/hlacpdjegllpkilocofdfenlgiadppae?style=for-the-badge&label=SIZE)
 ![Chrome Web Store Version](https://img.shields.io/chrome-web-store/v/hlacpdjegllpkilocofdfenlgiadppae?style=for-the-badge&label=VERSION)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/slxca/nfx-reset/deploy.yml?style=for-the-badge&label=PUBLISH)
 
 # NFX Reset
 
