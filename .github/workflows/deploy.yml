@@ -3,29 +3,31 @@ name: Publish Extension
 on:
   push:
     tags:
-      - 'v*' # Runs when you push a version tag like v1.0.1
+      - 'v*'
 
 jobs:
-  build-and-publish:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Update Version in Manifest
+      - name: Update Manifest Version
         run: |
-          TAG_VERSION=${GITHUB_REF#refs/tags/v}
-          jq ".version = \"$TAG_VERSION\"" manifest.json > temp.json && mv temp.json manifest.json
+          NEW_VERSION=${GITHUB_REF#refs/tags/v}
+          jq ".version = \"$NEW_VERSION\"" manifest.json > temp.json && mv temp.json manifest.json
+          echo "Manifest updated to version $NEW_VERSION"
 
       - name: Zip Extension
-        run: zip -r release.zip . -x ".git/*" ".github/*"
+        # Wir schließen git-Daten und den GitHub-Ordner aus
+        run: zip -r release.zip . -x "*.git*" ".github*" "README.md"
 
-      - name: Upload & Publish
-        uses: mobilefirst-inc/chrome-webstore-upload@v2
+      - name: Upload & Publish to Chrome Web Store
+        uses: mobilefirstllc/chrome-webstore-upload@v2
         with:
           file-name: 'release.zip'
           extension-id: ${{ secrets.EXTENSION_ID }}
           client-id: ${{ secrets.CLIENT_ID }}
           client-secret: ${{ secrets.CLIENT_SECRET }}
           refresh-token: ${{ secrets.REFRESH_TOKEN }}
-          # publish: true # Optional: Set to false if you only want to upload a draft
+          publish: true
