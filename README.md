@@ -1,72 +1,60 @@
-![Chrome Web Store Size](https://img.shields.io/chrome-web-store/size/hlacpdjegllpkilocofdfenlgiadppae?style=for-the-badge&label=SIZE)
+# NFX Reset 🎬
+
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/slxca/nfx-reset/deploy.yml?style=for-the-badge&label=PUBLISH)
 ![Chrome Web Store Version](https://img.shields.io/chrome-web-store/v/hlacpdjegllpkilocofdfenlgiadppae?style=for-the-badge&label=VERSION)
+![Chrome Web Store Size](https://img.shields.io/chrome-web-store/size/hlacpdjegllpkilocofdfenlgiadppae?style=for-the-badge&label=SIZE)
 
-# NFX Reset
+**NFX Reset** is a lightweight Chrome extension that brings back a missing feature to Netflix: **A true Reset button.** 
 
-**NFX Reset** is a lightweight Manifest V3 browser extension for Netflix. It adds a reset button to the Netflix interface so you can reset a title’s playback status with a single click.
+Tired of Netflix automatically jumping to the credits or starting a show at the last 2 minutes because you've seen it before? With NFX Reset, you can clear your playback progress with a single click directly in the Netflix interface.
 
-Click [here](https://chromewebstore.google.com/detail/hlacpdjegllpkilocofdfenlgiadppae?utm_source=item-share-cb) to install NFX Reset into your browser.
+---
 
-## Features
+## 🚀 Installation
 
-- Adds a **Reset** button directly inside the Netflix interface
-- Resets a title’s status through a Netflix API call
-- Runs without a build step or external dependencies
-- Works locally in the browser and sends no data to our own servers
+### Official Store (Recommended)
+The easiest way to use NFX Reset is via the Chrome Web Store.
+[**➔ Install NFX Reset for Chrome**](https://chromewebstore.google.com/detail/hlacpdjegllpkilocofdfenlgiadppae)
 
-## Installation
+### Manual Installation (Development)
+1. Download or clone this repository.
+2. Open `chrome://extensions` in your browser.
+3. Enable **Developer mode** (top right).
+4. Click **Load unpacked** and select the `nfx-reset` folder.
 
-The extension is loaded as an **unpacked extension**.
+---
 
-### Chrome / Chromium-based browsers
+## ✨ Features
 
-1. Open `chrome://extensions`
-2. Enable **Developer mode**
-3. Click **Load unpacked**
-4. Select the project folder `nfx-reset`
+*   **Native Integration:** Adds a "Reset" button directly next to the "Play" or "Episodes" buttons.
+*   **One-Click Action:** Resets progress instantly via the Netflix GraphQL API.
+*   **Privacy First:** No external servers, no tracking, no data collection. Everything happens in your browser.
+*   **Lightweight:** Pure JavaScript. No build steps, no bloat, no dependencies.
 
-## Usage
+---
 
-1. Sign in to Netflix
-2. Open a page where Netflix shows the relevant title button
-3. Click the injected **Reset** button from NFX Reset
-4. The extension resets the status and then reloads the page
+## 🛠️ How it works
 
-## How it works
+1.  **Injection:** The `content.js` script identifies the current title on your Netflix page and injects a "Reset" button.
+2.  **Authentication:** When clicked, it retrieves your current profile ID from local storage.
+3.  **Reset:** The `background.js` script sends an authenticated request to Netflix's internal API to clear the "Watched" status.
+4.  **Refresh:** The page reloads, and you can start your show from $0:00$.
 
-- `content.js` looks for matching buttons in the Netflix UI and injects a cloned button with reset behavior
-- When clicked, it reads the current profile ID from the browser’s local storage
-- `background.js` then sends an authenticated request to the Netflix GraphQL API
-- After a successful action, the page is refreshed
+---
 
-## Permissions
+## 🔒 Permissions & Privacy
 
-According to `manifest.json`, the extension uses the following permissions:
+We value your privacy. The extension only requests the minimum necessary permissions:
+*   `cookies`: To authenticate the reset request with your existing Netflix session.
+*   `https://www.netflix.com/*`: To modify the UI and add the button.
+*   `https://web.prod.cloud.netflix.com/*`: To communicate with the Netflix API.
 
-- `cookies` – so the background process can make the Netflix request using the signed-in session
-- `https://www.netflix.com/*` – so the content script can modify the Netflix interface
-- `https://web.prod.cloud.netflix.com/*` – so the background process can communicate with the Netflix API
+**No data is ever sent to us. Your Netflix data stays between you and Netflix.**
 
-## Privacy
+---
 
-NFX Reset processes the required information entirely locally in your browser. It does not use its own servers, analytics, or trackers.
+## ⚠️ Note
+*Netflix frequently updates its interface. If the button disappears or stops working, please open an [Issue](https://github.com/slxca/nfx-reset/issues).*
 
-You can read more in the [privacy policy](./PRIVACY.md).
-
-## Project Structure
-
-```text
-nfx-reset/
-├── background.js
-├── content.js
-├── manifest.json
-├── PRIVACY.md
-└── icons/
-    └── icon128.png
-```
-
-## Note
-
-Netflix may change its interface or API at any time. If that happens, the extension may need to be updated.
-
-
+---
+*Disclaimer: This project is not affiliated with, authorized, maintained, sponsored or endorsed by Netflix, Inc.*
