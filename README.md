@@ -20,13 +20,6 @@ The extension is loaded as an **unpacked extension**.
 3. Click **Load unpacked**
 4. Select the project folder `nfx-reset`
 
-### Edge
-
-1. Open `edge://extensions`
-2. Enable **Developer mode**
-3. Click **Load unpacked**
-4. Select the project folder `nfx-reset`
-
 ## Usage
 
 1. Sign in to Netflix
