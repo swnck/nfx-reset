@@ -46,8 +46,8 @@ The easiest way to use NFX Reset is via the Chrome Web Store.
 
 We value your privacy. The extension only requests the minimum necessary permissions:
 *   `cookies`: To authenticate the reset request with your existing Netflix session.
-*   `https://www.netflix.com/](https://www.netflix.com/*`: To modify the UI and add the button.
-*   `https://web.prod.cloud.netflix.com/](https://web.prod.cloud.netflix.com/*`: To communicate with the Netflix API.
+*   `https://www.netflix.com/*`: To modify the UI and add the button.
+*   `https://web.prod.cloud.netflix.com/*`: To communicate with the Netflix API.
 
 **No data is ever sent to us. Your Netflix data stays between you and Netflix.**
 
