@@ -54,18 +54,6 @@ NFX Reset processes the required information entirely locally in your browser. I
 
 You can read more in the [privacy policy](./PRIVACY.md).
 
-## Project Structure
-
-```text
-nfx-reset/
-├── background.js
-├── content.js
-├── manifest.json
-├── PRIVACY.md
-└── icons/
-    └── icon128.png
-```
-
 ## Note
 
 Netflix may change its interface or API at any time. If that happens, the extension may need to be updated.
