@@ -25,9 +25,9 @@ jobs:
       - name: Upload & Publish to Chrome Web Store
         uses: mobilefirstllc/cws-publish@latest
         with:
-          file-name: 'release.zip'
-          extension-id: ${{ secrets.EXTENSION_ID }}
-          client-id: ${{ secrets.CLIENT_ID }}
-          client-secret: ${{ secrets.CLIENT_SECRET }}
-          refresh-token: ${{ secrets.REFRESH_TOKEN }}
-          publish: true
+          action: 'publish'
+          client_id: ${{ secrets.CLIENT_ID }}
+          client_secret: ${{ secrets.CLIENT_SECRET }}
+          refresh_token: ${{ secrets.REFRESH_TOKEN }}
+          extension_id: ${{ secrets.EXTENSION_ID }}
+          zip_file: 'release.zip'
