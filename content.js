@@ -80,13 +80,17 @@
 
   function mountButton(row, videoId) {
     const originalButton = document.querySelector('[data-uia="add-to-my-list"]');
-    const originalWrapper = originalButton.closest('.ptrack-content').parentElement;
+    const isInMyList = document.querySelector('[data-uia="add-to-my-list-added"]');
+
+    let originalWrapper;
+    if (originalButton) originalWrapper = originalButton.closest('.ptrack-content').parentElement;
+    else originalWrapper = isInMyList.closest('.ptrack-content').parentElement;
 
     const clonedWrapper = originalWrapper.cloneNode(true);
     const newButton = clonedWrapper.querySelector('button');
 
     newButton.setAttribute('data-uia', 'reset-history-button');
-    newButton.setAttribute('aria-label', 'Verlauf zurücksetzen');
+    newButton.setAttribute('aria-label', 'Reset history');
 
     const svgElement = newButton.querySelector('svg');
 
