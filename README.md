@@ -1,6 +1,11 @@
+![Chrome Web Store Size](https://img.shields.io/chrome-web-store/size/hlacpdjegllpkilocofdfenlgiadppae?style=for-the-badge&label=SIZE)
+![Chrome Web Store Version](https://img.shields.io/chrome-web-store/v/hlacpdjegllpkilocofdfenlgiadppae?style=for-the-badge&label=VERSION)
+
 # NFX Reset
 
 **NFX Reset** is a lightweight Manifest V3 browser extension for Netflix. It adds a reset button to the Netflix interface so you can reset a title’s playback status with a single click.
+
+Click [here](https://chromewebstore.google.com/detail/hlacpdjegllpkilocofdfenlgiadppae?utm_source=item-share-cb) to install NFX Reset into your browser.
 
 ## Features
 
@@ -16,13 +21,6 @@ The extension is loaded as an **unpacked extension**.
 ### Chrome / Chromium-based browsers
 
 1. Open `chrome://extensions`
-2. Enable **Developer mode**
-3. Click **Load unpacked**
-4. Select the project folder `nfx-reset`
-
-### Edge
-
-1. Open `edge://extensions`
 2. Enable **Developer mode**
 3. Click **Load unpacked**
 4. Select the project folder `nfx-reset`
